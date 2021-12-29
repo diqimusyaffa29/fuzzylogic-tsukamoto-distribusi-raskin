@@ -22,62 +22,72 @@
             </div>
         </div>
     </nav>
-    <div class="container py-3 my-3" style="background-color:lightgray; border-radius:5px;">
-        <h1 class="text-center">Sistem Perhitungan Logika Fuzzy Dengan Menggunakan Metode Tsukamoto</h1>
-        <br>
-        <form method="POST" action="proses_tsukamoto.php">
-            <!-- Data Penduduk -->
-            <div class="form-group">
-                <label for="exampleFormControlInput1">Tahun</label>
-                <input type="number" step="any" name="tahun" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Tahun">
-            </div>
-            <div class="form-group">
-                <label for="exampleFormControlInput1">Jumlah Penduduk Miskin</label>
-                <input type="number" step="any" name="jumlahPendudukMiskin" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Data Penduduk ">
-            </div>
-            <div class="form-group">
-                <label for="exampleFormControlInput1">Jumlah Penduduk Miskin Tertinggi</label>
-                <input type="number" step="any" name="jumlahPendudukMiskinMax" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Data Penduduk Tertinggi">
-            </div>
-            <div class="form-group">
-                <label for="exampleFormControlInput1">Jumlah Penduduk Miskin Terendah</label>
-                <input type="number" step="any" name="jumlahPendudukMiskinMin" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Data Penduduk Terendah">
-            </div>
+    <div class="row">
+        <div class="col">
+            <div class="container py-3 my-3" style="background-color:lightgray; border-radius:5px;">
+                <h3 class="text-center">Sistem Perhitungan Logika Fuzzy Dengan Menggunakan Metode Tsukamoto</h3>
+                <br>
+                <form method="POST" action="proses_tsukamoto.php" class="form-control-g">
+                    <!-- Data Penduduk -->
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Tahun</label>
+                        <input type="number" step="any" name="tahun" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Tahun">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Jumlah Penduduk Miskin</label>
+                        <input type="number" step="any" name="jumlahPendudukMiskin" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Data Penduduk ">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Jumlah Penduduk Miskin Tertinggi</label>
+                        <input type="number" step="any" name="jumlahPendudukMiskinMax" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Data Penduduk Tertinggi">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Jumlah Penduduk Miskin Terendah</label>
+                        <input type="number" step="any" name="jumlahPendudukMiskinMin" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Data Penduduk Terendah">
+                    </div>
 
-            <!-- Data Raskin -->
-            <div class="form-group">
-                <label for="exampleFormControlInput1">Jumlah Raskin</label>
-                <input type="number" step="any" name="jumlahRaskin" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Data Raskin">
-            </div>
-            <div class="form-group">
-                <label for="exampleFormControlInput1">Jumlah Raskin Tertinggi</label>
-                <input type="number" step="any" name="jumlahRaskinMax" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Data Raskin Tertinggi">
-            </div>
-            <div class="form-group">
-                <label for="exampleFormControlInput1">Jumlah Raskin Terendah</label>
-                <input type="number" step="any" name="jumlahRaskinMin" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Data Raskin Terendah">
-            </div>
+                    <!-- Data Raskin -->
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Jumlah Raskin</label>
+                        <input type="number" step="any" name="jumlahRaskin" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Data Raskin">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Jumlah Raskin Tertinggi</label>
+                        <input type="number" step="any" name="jumlahRaskinMax" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Data Raskin Tertinggi">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Jumlah Raskin Terendah</label>
+                        <input type="number" step="any" name="jumlahRaskinMin" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Data Raskin Terendah">
+                    </div>
 
-            <!-- Data Distribusi -->
-            <div class="form-group">
-                <label for="exampleFormControlInput1">Jumlah Distribusi</label>
-                <input type="number" step="any" name="jumlahDistribusi" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Data Distribusi">
+                    <!-- Data Distribusi -->
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Jumlah Distribusi</label>
+                        <input type="number" step="any" name="jumlahDistribusi" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Data Distribusi">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Jumlah Distribusi Tertinggi</label>
+                        <input type="number" step="any" name="jumlahDistribusiMax" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Data Distribusi Tertinggi">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlInput1">Jumlah Distribusi Terendah</label>
+                        <input type="number" step="any" name="jumlahDistribusiMin" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Data Distribusi Terendah">
+                    </div>
+                    <button type="submit" name="proses" class="btn btn-success py-1">Proses</button>
+                </form>
             </div>
-            <div class="form-group">
-                <label for="exampleFormControlInput1">Jumlah Distribusi Tertinggi</label>
-                <input type="number" step="any" name="jumlahDistribusiMax" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Data Distribusi Tertinggi">
+        </div>
+        <div class="col">
+            <h2>Data yang kami gunakan</h2>
+            <div class="gambar">
+                <img src="img/foto3.jpg" class="img-fluid" alt="">
             </div>
-            <div class="form-group">
-                <label for="exampleFormControlInput1">Jumlah Distribusi Terendah</label>
-                <input type="number" step="any" name="jumlahDistribusiMin" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Data Distribusi Terendah">
-            </div>
-
-            <button type="submit" name="proses" class="btn btn-success py-1">Proses</button>
-        </form>
+        </div>
     </div>
     <footer>
         <center>Copyright &copy; Kelompok 2 - 2021</center>
     </footer>
 </body>
 <script src="js/bootstrap.min.js"></script>
+
 </html>

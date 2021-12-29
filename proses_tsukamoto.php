@@ -190,7 +190,7 @@ function defuzzy($a1, $a2, $a3, $a4, $z1, $z2, $z3, $z4)
         <?php if (isset($_POST['proses'])) { ?>
             <table class="table">
                 <!-- Data inputan -->
-                <h1>Inputa Data Variabel dan Himpunan Variabel Fuzzy</h1>
+                <h1>Inputan Data Variabel dan Himpunan Variabel Fuzzy</h1>
                 <tr>
                     <td>Tahun</td>
                     <td>:</td>
@@ -280,7 +280,7 @@ function defuzzy($a1, $a2, $a3, $a4, $z1, $z2, $z3, $z4)
                         $b = $nilai_aturan1[1];
                     }
                     echo "<td>a-predikat1 = $a</td>";
-                    echo "<br>";
+                    
                     echo "<td>nilai z1 = $b</td>";
                     ?>
                 </tr>
@@ -297,9 +297,9 @@ function defuzzy($a1, $a2, $a3, $a4, $z1, $z2, $z3, $z4)
                         $a = $nilai_aturan2[0];
                         $b = $nilai_aturan2[1];
                     }
-                    echo "<td>a-predikat1 = $a</td>";
-                    echo "<br>";
-                    echo "<td>nilai z1 = $b</td>";
+                    echo "<td>a-predikat2 = $a</td>";
+                    
+                    echo "<td>nilai z2 = $b</td>";
                     ?>
                 </tr>
                 <tr>
@@ -315,9 +315,9 @@ function defuzzy($a1, $a2, $a3, $a4, $z1, $z2, $z3, $z4)
                         $a = $nilai_aturan3[0];
                         $b = $nilai_aturan3[1];
                     }
-                    echo "<td>a-predikat1 = $a</td>";
-                    echo "<br>";
-                    echo "<td>nilai z1 = $b</td>";
+                    echo "<td>a-predikat3 = $a</td>";
+                    
+                    echo "<td>nilai z3 = $b</td>";
                     ?>
                 </tr>
                 <tr>
@@ -333,9 +333,9 @@ function defuzzy($a1, $a2, $a3, $a4, $z1, $z2, $z3, $z4)
                         $a = $nilai_aturan4[0];
                         $b = $nilai_aturan4[1];
                     }
-                    echo "<td>a-predikat1 = $a</td>";
-                    echo "<br>";
-                    echo "<td>nilai z1 = $b</td>";
+                    echo "<td>a-predikat4 = $a</td>";
+                    
+                    echo "<td>nilai z4 = $b</td>";
                     ?>
                 </tr>
             </table>

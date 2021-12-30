@@ -7,7 +7,7 @@ $jumlahPendudukMiskinMin = $_POST['jumlahPendudukMiskinMin'];
 
 $jumlahRaskin = $_POST['jumlahRaskin'];
 $jumlahRaskinMax = $_POST['jumlahRaskinMax'];
-$jumlahRaskinMin = $_POST['jumlahRaskinMin'];
+$jumlahRaskinMin = $_POST['jumlahRaskinMin']; //sesuai inputan
 
 $jumlahDistribusi = $_POST['jumlahDistribusi'];
 $jumlahDistribusiMax = $_POST['jumlahDistribusiMax'];
@@ -16,7 +16,7 @@ $jumlahDistribusiMin = $_POST['jumlahDistribusiMin'];
 // Penduduk
 function berkurang($jumlahPendudukMiskin, $jumlahPendudukMiskinMax, $jumlahPendudukMiskinMin)
 {
-    $nilaiBerkurang = 0;
+    $nilaiBerkurang = 0; //hasil tidak diketahui
     if ($jumlahPendudukMiskin <= $jumlahPendudukMiskinMin) {
         $nilaiBerkurang = 1;
     } else {
@@ -34,13 +34,13 @@ function bertambah($jumlahPendudukMiskin, $jumlahPendudukMiskinMax, $jumlahPendu
 {
     $nilaiBertambah = 0;
     if ($jumlahPendudukMiskin <= $jumlahPendudukMiskinMin) {
-        $nilaiBertambah = 1;
+        $nilaiBertambah = 0;
     } else {
         if ($jumlahPendudukMiskinMin <= $jumlahPendudukMiskin && $jumlahPendudukMiskin <= $jumlahPendudukMiskinMax) {
             $hitungBertambah = ($jumlahPendudukMiskin - $jumlahPendudukMiskinMin) / ($jumlahPendudukMiskinMax - $jumlahPendudukMiskinMin);
             $nilaiBertambah = $hitungBertambah;
         } else {
-            $nilaiBertambah = 0;
+            $nilaiBertambah = 1;
         }
     }
     return $nilaiBertambah;
@@ -67,13 +67,13 @@ function banyak($jumlahRaskin, $jumlahRaskinMax, $jumlahRaskinMin)
 {
     $nilaiBanyak = 0;
     if ($jumlahRaskin <= $jumlahRaskinMin) {
-        $nilaiBanyak = 1;
+        $nilaiBanyak = 0;
     } else {
         if ($jumlahRaskinMin <= $jumlahRaskin && $jumlahRaskin <= $jumlahRaskinMax) {
             $hitungBanyak = ($jumlahRaskin - $jumlahRaskinMin) / ($jumlahRaskinMax - $jumlahRaskinMin);
             $nilaiBanyak = $hitungBanyak;
         } else {
-            $nilaiBanyak = 0;
+            $nilaiBanyak = 1;
         }
     }
 
@@ -101,13 +101,13 @@ function naik($jumlahDistribusi, $jumlahDistribusiMax, $jumlahDistribusiMin)
 {
     $nilaiNaik = 0;
     if ($jumlahDistribusi <= $jumlahDistribusiMin) {
-        $nilaiNaik = 1;
+        $nilaiNaik = 0;
     } else {
         if ($jumlahDistribusiMin <= $jumlahDistribusi && $jumlahDistribusi <= $jumlahDistribusiMax) {
             $hitungNaik = ($jumlahDistribusi - $jumlahDistribusiMin) / ($jumlahDistribusiMax - $jumlahDistribusiMin);
             $nilaiNaik = $hitungNaik;
         } else {
-            $nilaiNaik = 0;
+            $nilaiNaik = 1;
         }
     }
     return $nilaiNaik;
@@ -120,7 +120,7 @@ function aturan1($nilaiBerkurang, $nilaiBanyak, $jumlahDistribusiMax, $jumlahDis
     $a1 = min($nilaiBerkurang, $nilaiBanyak);
     $z1 = $jumlahDistribusiMax - ($a1 * ($jumlahDistribusiMax - $jumlahDistribusiMin));
 
-    return array($a1, $z1);
+    return array($a1, $z1);  //aturan1[0] = $a1 atuiran1[1] = $z1
 }
 
 
@@ -276,12 +276,13 @@ function defuzzy($a1, $a2, $a3, $a4, $z1, $z2, $z3, $z4)
                     $banyak = banyak($jumlahRaskin, $jumlahRaskinMax, $jumlahRaskinMin);
                     if ($berkurang && $banyak) {
                         $nilai_aturan1 = aturan1($berkurang, $banyak, $jumlahDistribusiMax, $jumlahDistribusiMin);
-                        $a = $nilai_aturan1[0];
+                        $a = $nilai_aturan1[0]; //menyimpan return dari fungsi aturan1 index ke- 0 ke dalam variabel bernama $a
                         $b = $nilai_aturan1[1];
                     }
                     echo "<td>a-predikat1 = $a</td>";
                     
-                    echo "<td>nilai z1 = $b</td>";
+                    echo "<td>nilai z1 = $b </td>";
+                    echo "<td><b>Distribusi Turun</b></td>";
                     ?>
                 </tr>
                 <tr>
@@ -300,6 +301,8 @@ function defuzzy($a1, $a2, $a3, $a4, $z1, $z2, $z3, $z4)
                     echo "<td>a-predikat2 = $a</td>";
                     
                     echo "<td>nilai z2 = $b</td>";
+
+                    echo "<td><b>Distribusi Turun</b></td>";
                     ?>
                 </tr>
                 <tr>
@@ -318,6 +321,7 @@ function defuzzy($a1, $a2, $a3, $a4, $z1, $z2, $z3, $z4)
                     echo "<td>a-predikat3 = $a</td>";
                     
                     echo "<td>nilai z3 = $b</td>";
+                    echo "<td><b>Distribusi Naik</b></td>";
                     ?>
                 </tr>
                 <tr>
@@ -336,6 +340,7 @@ function defuzzy($a1, $a2, $a3, $a4, $z1, $z2, $z3, $z4)
                     echo "<td>a-predikat4 = $a</td>";
                     
                     echo "<td>nilai z4 = $b</td>";
+                    echo "<td><b>Distribusi Turun</b></td>";
                     ?>
                 </tr>
             </table>
@@ -367,10 +372,11 @@ function defuzzy($a1, $a2, $a3, $a4, $z1, $z2, $z3, $z4)
 
                     $nilai_defuzzy = defuzzy($a1, $a2, $a3, $a4, $z1, $z2, $z3, $z4);
 
-                    echo "<td>Hasil Deffuzyfikasi adalah $nilai_defuzzy ton</td>";
+                    echo "<td>Hasil Deffuzyfikasi adalah <b>$nilai_defuzzy</b></td>";
                     ?>
                 </tr>
             </table>
+            <button class="btn btn-danger"><a href="tsukamoto.php">Kembali</a></button>
         <?php } ?>
     </div>
     <footer>

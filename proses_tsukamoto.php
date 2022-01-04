@@ -300,7 +300,7 @@ function defuzzy($a1, $a2, $a3, $a4, $z1, $z2, $z3, $z4)
                         echo "<td>Jika Penduduk Miskin <b>BERKURANG</b></td>";
                         echo "<td>Rata-rata Stok <b>BANYAK</b></td>";
                         echo "<td>=</td>";
-                        echo "<td><b>Distribusi Turun ($turun)</b></td>";
+                        echo "<td><b>Distribusi TURUN ($turun)</b></td>";
                     }
                     ?>
                 </tr>

@@ -85,7 +85,7 @@
         </div>
     </div>
     <footer>
-        <center>Copyright &copy; Kelompok 2 - 2021</center>
+        <center>Copyright &copy; Kelompok 7 - 2021</center>
     </footer>
 </body>
 <script src="js/bootstrap.min.js"></script>

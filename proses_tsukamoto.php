@@ -287,8 +287,8 @@ function defuzzy($a1, $a2, $a3, $a4, $z1, $z2, $z3, $z4)
                     <td>Aturan R1 </td>
                     <td>:</td>
                     <?php
-                    $a = 0;
-                    $b = 0;
+                    $a = 0; //membuat variabel kosong 
+                    $b = 0; //membuat variabel kosong
                     $berkurang = berkurang($jumlahPendudukMiskin, $jumlahPendudukMiskinMax, $jumlahPendudukMiskinMin);
                     $banyak = banyak($jumlahRaskin, $jumlahRaskinMax, $jumlahRaskinMin);
                     $turun = turun($jumlahDistribusi, $jumlahDistribusiMax, $jumlahDistribusiMin);
@@ -297,7 +297,7 @@ function defuzzy($a1, $a2, $a3, $a4, $z1, $z2, $z3, $z4)
                     if ($berkurang >= 0 && $banyak >= 0) {
                         $a = $nilai_aturan1[0]; //menyimpan return dari fungsi aturan1 index ke- 0 ke dalam variabel bernama $a
                         $b = $nilai_aturan1[1];
-                        echo "<td>Jika Penduduk Miskin <b>BERKURANG</b></td>";
+                        echo "<td>Jika Penduduk Miskin <b>BERKURANG </b></td>";
                         echo "<td>Rata-rata Stok <b>BANYAK</b></td>";
                         echo "<td>=</td>";
                         echo "<td><b>Distribusi TURUN ($turun)</b></td>";
@@ -355,7 +355,7 @@ function defuzzy($a1, $a2, $a3, $a4, $z1, $z2, $z3, $z4)
                     $turun = turun($jumlahDistribusi, $jumlahDistribusiMax, $jumlahDistribusiMin);
                     if ($bertambah >= 0 && $sedikit >= 0) {
                         $nilai_aturan4 = aturan4($bertambah, $sedikit, $jumlahDistribusiMax, $jumlahDistribusiMin);
-                        $a = $nilai_aturan4[0];
+                        $a = $nilai_aturan4[0]; //$a4
                         $b = $nilai_aturan4[1];
                         echo "<td>Jika Penduduk Miskin <b>BERKURANG</b></td>";
                         echo "<td>Rata-rata Stok <b>SEDIKIT</b></td>";
@@ -380,16 +380,16 @@ function defuzzy($a1, $a2, $a3, $a4, $z1, $z2, $z3, $z4)
                     $nilai_aturan3 = aturan3($banyak,  $bertambah, $jumlahDistribusiMax, $jumlahDistribusiMin);
                     $nilai_aturan4 = aturan4($bertambah, $sedikit, $jumlahDistribusiMax, $jumlahDistribusiMin);
 
-                    $a1 = $nilai_aturan1[0];
-                    $a2 = $nilai_aturan2[0];
-                    $a3 = $nilai_aturan3[0];
-                    $a4 = $nilai_aturan4[0];
-                    $z1 = $nilai_aturan1[1];
-                    $z2 = $nilai_aturan2[1];
-                    $z3 = $nilai_aturan3[1];
-                    $z4 = $nilai_aturan4[1];
-                    // var_dump($a1,$a2,$a3,$a4,$z1,$z2,$z3,$z4);
-                    // die;    
+                    $a1 = $nilai_aturan1[0]; //index ke- 0 dari aturan 1 
+                    $a2 = $nilai_aturan2[0]; //index ke- 0 dari aturan 2
+                    $a3 = $nilai_aturan3[0]; //index ke- 0 dari aturan 3 
+                    $a4 = $nilai_aturan4[0]; //index ke- 0 dari aturan 4
+
+                    $z1 = $nilai_aturan1[1]; //index ke- 1 dari aturan 1
+                    $z2 = $nilai_aturan2[1]; //index ke- 1 dari aturan 2
+                    $z3 = $nilai_aturan3[1]; //index ke- 1 dari aturan 3
+                    $z4 = $nilai_aturan4[1]; //index ke- 1 dari aturan 4
+                    
 
                     $nilai_defuzzy = defuzzy($a1, $a2, $a3, $a4, $z1, $z2, $z3, $z4);
 

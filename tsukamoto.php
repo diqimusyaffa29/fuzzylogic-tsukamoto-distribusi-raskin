@@ -73,7 +73,7 @@
                         <label for="exampleFormControlInput1">Jumlah Distribusi Terendah</label>
                         <input type="number" step="any" name="jumlahDistribusiMin" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Data Distribusi Terendah">
                     </div>
-                    <button type="submit" name="proses" class="btn btn-success py-1">Proses</button>
+                    <button type="submit" name="proses" class="btn btn-success py-1">Proses</button> 
                 </form>
             </div>
         </div>
